@@ -1,1 +1,455 @@
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../fonts/Poppins-Regular.ttf');
+}
 
+:root{
+   --cor-primaria: #F4AF04;
+   --sombra: #CF830345;
+   --cor-do-tema: #fff;
+   --cor-do-tema-2: #e7e8ee
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none
+}
+
+html{
+ height: 100%;
+}
+
+
+.abertura{
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ gap: 20px;
+ color: #555;
+ background: #e7e8ee;
+ z-index: 1000;
+ -webkit-animation: FadeOut .5s ease-in-out;
+ -o-animation: FadeOut .5s ease-in-out;
+ animation: FadeOut .5s ease-in-out;
+ -webkit-animation-delay: 1.55s;
+ -moz-animation-delay: 1.55s;
+ -o-animation-delay: 1.55s;
+ animation-delay: 1.55s;
+}
+
+@-webkit-keyframes FadeOut {
+ from { opacity: 1; }
+ to { opacity: 0; }
+}
+@-o-keyframes FadeOut {
+ from { opacity: 1; }
+ to { opacity: 0; }
+}
+@-moz-keyframes FadeOut {
+ from { opacity: 1; }
+ to { opacity: 0; }
+}
+@keyframes FadeOut {
+ from { opacity: 1; }
+ to { opacity: 0; }
+}
+
+.abertura .nome-do-app{
+  font-size: 1.2rem;
+}
+
+.abertura .logo{
+ height: 80px;
+ width: 80px;
+ -webkit-border-radius: 1rem;
+ -moz-border-radius: 1rem;
+ border-radius: 1rem;
+}
+
+.abertura .desenvolvedor{
+ position: absolute;
+ bottom: 30px;
+ text-transform: uppercase;
+ font-size: .85rem;
+}
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--cor-do-tema-2);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-family: 'Poppins Regular'; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*===== BARRA DE APLICATIVO =====*/
+
+.barra-de-aplicativo{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: var(--cor-primaria);
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0 10px 15px var(--sombra);
+  z-index: 100;
+}
+
+/*===== FORMULÁRIO =====*/
+
+.formulario{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 15px;
+  padding: 30px;
+  gap: 20px;
+  max-width: 400px;
+  background: var(--cor-do-tema);
+  border-radius: 2rem;
+  box-shadow: 0 10px 50px var(--sombra);
+  margin-top: 90px;
+}
+
+.formulario .tipo-de-juros{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+  margin-bottom: 20px;
+}
+
+.formulario .tipo-de-juros h3{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase
+}
+
+.formulario .tipo-de-juros label{
+  display: inline-flex;
+  align-items: center;
+  justify-content:  center;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  gap: 8px
+}
+
+/* Radio */
+
+.formulario .btn-radio{
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: .85rem;
+  height: .85rem;
+  border: 2px solid #222;
+  border-radius: 1rem;
+}
+
+.formulario .btn-radio:checked{
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.formulario .btn-radio::before{
+  content: '';
+  display: inline-block;
+  width: 0%;
+  height: 0%;
+  border-radius: 1rem;
+  background: #fff;
+  transition: .3s ease;
+}
+
+.formulario .btn-radio:checked::before{
+  width: 50%;
+  height: 50%;
+}
+
+.formulario .btn-radio:checked ~ span{
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+/* Caixa de entrda */
+
+
+.formulario .caixa-de-entrada{
+  width: 100%;
+  height: 50px;
+  background: inherit;
+}
+
+
+.formulario .caixa-de-entrada label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.formulario .caixa-de-entrada label *{
+  transition:  .3s;
+}
+
+.formulario .caixa-de-entrada label input{
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  padding-left: 45px;
+  border: none;
+  background: transparent;
+  border-radius: .5rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px solid #555;
+  color: #222;
+  font-family: 'Poppins Regular', sans-serif;
+}
+
+.formulario .caixa-de-entrada label input::placeholder{
+  color: #222;
+}
+
+.formulario .caixa-de-entrada label input:valid,
+.formulario .caixa-de-entrada label input:focus{
+  border-color: var(--cor-primaria);
+}
+
+.formulario .caixa-de-entrada label i.bx{
+  position: absolute;
+  left: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  font-size: 1.2rem;
+  font-style: normal;
+  color: #555;
+}
+
+.formulario .caixa-de-entrada label input:valid~ i.bx,
+.formulario .caixa-de-entrada label input:focus ~ i.bx{
+  color: var(--cor-primaria);
+}
+
+.formulario .caixa-de-entrada label span{
+  position: absolute;
+  display: inline-block;
+  height: 20px;
+  left: 45px;
+  font-size: .85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: var(--cor-do-tema);
+  padding: 0 10px;
+  color: #555;
+}
+
+.formulario .caixa-de-entrada label input:valid ~ span,
+.formulario .caixa-de-entrada label input:focus ~ span{
+  font-size: .7rem;
+  color: var(--cor-primaria);
+  transform: translate(-30px, -25px);
+}
+
+
+.formulario .flexbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.formulario .flexbox .btn-calcular{
+  width: 100%;
+  height: 60px;
+  border-radius: 1.2rem;
+  background: var(--cor-primaria);
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  box-shadow: 0 10px 15px #CF830345;
+}
+
+.formulario .flexbox .btn-calcular:active{
+  transform: scale(.95);
+}
+
+/* ===== MODAL ===== */
+
+.modal[open]{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border:none;
+  background: #00000075;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  z-index: 10000;
+}
+
+.modal .caixa{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--cor-do-tema-2);
+  width: calc(100% - 40px);
+  height: max-content;
+  padding: 20px;
+  border-radius: 1.5rem;
+  box-shadow: 0 30px 40px #00000065;
+  gap: 15px 0;
+  max-width: 500px;
+  animation: modal .4s linear;
+  position: absolute;
+  top: 70px;
+}
+
+@keyframes modal{
+   from{
+     transform: scale(0.5);
+     -webkit-transform: scale(0.5);
+     opacity: 0;
+   }to{
+     transform: scale(1);
+     -webkit-transform: scale(1);
+     opacity: 1;
+   }
+}
+
+.modal .caixa h3{
+  font-size: 1.2rem;
+}
+
+table{
+  width: 100%;
+  padding: 10px;
+}
+
+
+table tr{
+  height: 40px;
+
+}
+
+table th{
+  text-align: left;
+  color: #333
+}
+
+table td{
+  text-align: right;
+  color: #333;
+}
+
+table #montante{
+  font-weight: bold;
+}
+
+.modal .acoes{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  font-weight: bold;
+}
+
+
+.acoes button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border:none;
+  background: transparent;
+  font-size: .75rem;
+  padding: 10px 20px;
+  background-color: var(--cor-primaria);
+  box-shadow: 0 10px 15px var(--sombra);
+  color: #eee;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+  outline: none;
+}
+
+.acoes button:active{
+  transform: scale(.95);
+}
+
+.acoes button .bolha{
+  background: #F1CA73;
+}
+
+
+/* Efeito de bolha estourando */
+
+.efeito-bolha{
+   position: relative;
+   overflow: hidden;
+}
+
+.efeito-bolha .bolha{
+  position: absolute;
+   display: block;
+   width: var(--r);
+   height: var(--r);
+   background: #fff;
+   opacity: 0.7;
+   transform: translate(-50%, -50%);
+   animation: crescer .4s linear;
+   border-radius: 50%;
+}
+
+@keyframes crescer{
+   from{
+      width: 0;
+      height: 0;
+      opacity: .7;
+     }to{
+       width: var(--r);
+       height: var(--r);
+       opacity: .4;
+   }
+}

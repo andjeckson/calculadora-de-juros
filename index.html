@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Calule juros de forma simples e rápida.">
+   <meta name="author" content="Andjeckson">
+  <!-- Muda o tema do navegador -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#F4AF04">
+  <meta name="msapplication-navbutton-color" content="#F4AF04">
+  <meta name="navbutton-color" content="#F4AF04">
+  <meta name="theme-color" content="#F4AF04">
+  
+  <title>Calculadora de juros</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- BoxIcons --->
+  <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
+  
+  <script src="assets/js/main.js" defer></script>
+</head>
 
+<body>
+
+ <section class="abertura">
+    <img src="assets/img/logo.webp" alt="logo" class="logo">
+    <h4 class="nome-do-app">Calculadora de Juros</h4>
+    <p class="desenvolvedor">Projetado por Andjeckson</p>
+ </section>
+ 
+ 
+  
+  <section class="calculadora">
+    
+      <header class="barra-de-aplicativo">
+          <i class="bx bx-calculator"></i>
+          <span>Calculadora de juros</span>
+      </header>
+      
+      <form 
+            class="formulario"
+            name="calculadora"
+            action="#"
+            method="dialog">
+        
+        <section class="tipo-de-juros">
+            <h3>Calcular juros</h3>
+            <label>
+                <input type="radio"
+                       name="tipoDeJuros"
+                       value="simples"
+                       class="btn-radio"
+                       checked>
+                <span>Simples</span>
+            </label>
+            
+            <label>
+                <input type="radio"
+                       name="tipoDeJuros"
+                       value="compostos"
+                       class="btn-radio">
+                <span>Compostos</span>
+            </label>
+            
+        </section>
+           
+          <div class="caixa-de-entrada">
+              <label>
+                  <input type="number"
+                         name="capital"
+                         placeholder="0,00"
+                         step="0.01"
+                         min="0.01"
+                         required>
+                  <i class="bx bx-coin-stack"></i>
+                  <span>Capital inicial</span>
+             </label>
+          </div>
+          
+          <div class="caixa-de-entrada">
+              <label>
+                  <input type="number"
+                         name="taxa"
+                         placeholder="0,00 %"
+                         step="0.01"
+                         min="0.01"
+                         required>
+                  <span>Taxa (%)</span>
+                  <i class="bx bx-line-chart"></i>
+             </label>
+          </div>
+          
+          <div class="caixa-de-entrada">
+              <label>
+                  <input type="number"
+                         name="tempo"
+                         placeholder="0"
+                         min="1"
+                         required>
+                  <i class="bx bx-calendar"></i>
+                  <span>Tempo</span>
+             </label>
+          </div>
+          
+          <div class="flexbox">
+              <button type="submit"
+                      class="btn-calcular"
+                      name="calcular">
+                <i class="bx bx-dollar"></i>
+                <span>Calcular</span>
+              </button>
+          </div>
+      </form>
+  </section>
+  
+  <!--===== CAIXA DE DIÁLOGO =====-->
+  
+  <dialog class="modal">
+      <section class="caixa">
+         <h3>Total:</h3>
+         <table class="tabela">
+           <tr>
+              <th>Capital inicial:</th>
+              <td id="valorCapital"></td>
+          </tr>
+           <tr>
+               <th>Juros:</th>
+               <td id="valorJuros">R$ 210,00</td>
+            </tr> 
+            <tr>
+               <th>Montante:</th>
+               <td id="valorMontante">R$ 1300,00</td>
+            </tr> 
+         </table>
+          <div class="acoes">
+              <button type="button"
+                      class="efeito-bolha"
+                      id="btnModal"
+                      >Fechar</button>
+         </div>
+      </section>
+  </dialog>
+  
+</body>
+</html>
